@@ -1,0 +1,12 @@
+# 服务器端口与前缀配置
+server:
+  port: 8085
+  servlet:
+    context-path: /app
+# 加载 其他配置文件
+spring:
+  profiles:
+    include:
+      - log   # 加载 application-log.yml
+      - redis   # 加载 application-redis.yml
+

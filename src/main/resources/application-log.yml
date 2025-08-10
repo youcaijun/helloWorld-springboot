@@ -1,0 +1,16 @@
+logging:
+  level:
+    root: warn                    # 根日志级别
+    com.example.demo: debug       # 包级别日志
+    org.springframework.web: info
+  file:
+    name: logs/app.log            # 日志文件名（优先使用）
+    # path: ./logs               # 日志目录（与name二选一）
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n"
+    file: "%d{yyyy-MM-dd} %-5level [%thread] %logger{36} - %msg%n"
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB         # 单个日志文件最大尺寸
+      max-history: 30             # 保留日志天数
+      file-name-pattern: logs/app.%d{yyyy-MM-dd}.%i.log.gz
